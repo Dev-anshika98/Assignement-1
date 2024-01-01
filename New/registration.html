@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration page</title>
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130vh;
+            margin: 0;
+        }
+
+        form {
+            width: 80%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        } */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+           
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #a988f1;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        select {
+            width: 32%;
+            display: inline-block;
+            margin-right: 2%;
+        }
+
+        #dob {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        
+        <font face="TIMES NEW ROMAN" size="5">
+            <!-- <h1>Registration Form</h1>
+            <form action="submit.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <label for="email">E-mail ID:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required><br><br>
+                <label>Sex:</label>
+                <input type="radio" id="male" name="sex" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="sex" value="other">
+                <label for="other">Other</label><br><br>
+                <label for="dob">Date of Birth:</label>
+                <select id="day" name="day">
+                    <option value="" disabled selected>Day</option>
+                </select>
+                <select id="month" name="month">
+                    <option value="" disabled selected>Month</option>
+                </select>
+                <select id="year" name="year">
+                    <option value="" disabled selected>Year</option>
+                </select><br><br>
+                <label>Languages Known:</label>
+                <input type="checkbox" id="english" name="languages[]" value="english">
+                <label for="english">English</label>
+                <input type="checkbox" id="telugu" name="languages[]" value="telugu">
+                <label for="telugu">Telugu</label>
+                <input type="checkbox" id="hindi" name="languages[]" value="hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" id="tamil" name="languages[]" value="tamil">
+                <label for="tamil">Tamil</label><br><br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form> -->
+
+            <div class="container">
+                <h1 style="text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">
+                    Registration Form</h1>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" oninput="validateName()" required>
+                    <p id="nameError" style="color: red;"></p>
+        
+                    <script>
+                        function validateName() {
+                            var nameInput = document.getElementById("name");
+                            var nameError = document.getElementById("nameError");
+        
+                            if (nameInput.value.length < 6 || !/^[a-zA-Z]+$/.test(nameInput.value)) {
+                                nameError.textContent = "Name should contain only alphabets and have a minimum length of 6 characters.";
+                                nameInput.setCustomValidity("Invalid input");
+                            } else {
+                                nameError.textContent = "";
+                                nameInput.setCustomValidity("");
+                            }
+                        }
+                    </script>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" oninput="validatePassword()" required>
+                    <p id="passwordError" style="color: red;"></p>
+        
+                    <script>
+                        function validatePassword() {
+                            var passwordInput = document.getElementById("password");
+                            var passwordError = document.getElementById("passwordError");
+        
+                            if (passwordInput.value.length < 6) {
+                                passwordError.textContent = "Password should be at least 6 characters long.";
+                                passwordInput.setCustomValidity("Invalid input");
+                            } else {
+                                passwordError.textContent = "";
+                                passwordInput.setCustomValidity("");
+                            }
+                        }
+                    </script>
+        
+        
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" oninput="validateEmail()" required>
+                    <p id="emailError" style="color: red;"></p>
+        
+                    <script>
+        
+                    </script>
+        
+        
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" oninput="validatePhoneNumber()" required>
+                    <p id="phoneError" style="color: red;"></p>
+        
+                    <script>
+                        function validatePhoneNumber() {
+                            var phoneInput = document.getElementById("phone");
+                            var phoneError = document.getElementById("phoneError");
+                            var phoneNumber = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+        
+                            if (phoneNumber.length !== 10) {
+                                phoneError.textContent = "Phone number should contain exactly 10 digits.";
+                                phoneInput.setCustomValidity("Invalid input");
+                            } else {
+                                phoneError.textContent = "";
+                                phoneInput.setCustomValidity("");
+                            }
+                        }
+                    </script>
+        
+                    <label>Sex:</label>
+                    <input type="radio" id="male" name="sex" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="sex" value="female" required>
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="sex" value="other" required>
+                    <label for="other">Other</label>
+        
+        
+                    <label for="dob">Date of Birth:</label>
+                    <div id="dob">
+                        <select name="dob_day" required>
+                            <option value="" disabled selected>Day</option>
+                            <!-- Add day options here using JavaScript -->
+                        </select>
+                        <select name="dob_month" required>
+                            <option value="" disabled selected>Month</option>
+                            <!-- Add month options here using JavaScript -->
+                        </select>
+                        <select name="dob_year" required>
+                            <option value="" disabled selected>Year</option>
+                            <!-- Add year options here using JavaScript -->
+                        </select>
+                    </div>
+        
+                    <script>
+                        // Function to populate the day dropdown
+                        function populateDays() {
+                            var dayDropdown = document.getElementsByName("dob_day")[0];
+                            for (var day = 1; day <= 31; day++) {
+                                var option = document.createElement("option");
+                                option.value = day;
+                                option.text = day;
+                                dayDropdown.add(option);
+                            }
+                        }
+        
+                        // Function to populate the month dropdown
+                        function populateMonths() {
+                            var monthDropdown = document.getElementsByName("dob_month")[0];
+                            var months = [
+                                'January', 'February', 'March', 'April', 'May', 'June',
+                                'July', 'August', 'September', 'October', 'November', 'December'
+                            ];
+        
+                            for (var i = 0; i < months.length; i++) {
+                                var option = document.createElement("option");
+                                option.value = i + 1;
+                                option.text = months[i];
+                                monthDropdown.add(option);
+                            }
+                        }
+        
+                        // Function to populate the year dropdown
+                        function populateYears() {
+                            var yearDropdown = document.getElementsByName("dob_year")[0];
+                            var currentYear = new Date().getFullYear();
+                            var startYear = currentYear - 100; // Assuming a person can't be more than 100 years old
+        
+                            for (var year = currentYear; year >= startYear; year--) {
+                                var option = document.createElement("option");
+                                option.value = year;
+                                option.text = year;
+                                yearDropdown.add(option);
+                            }
+                        }
+        
+                        // Call the functions to populate the dropdowns
+                        populateDays();
+                        populateMonths();
+                        populateYears();
+                    </script>
+        
+        
+                    <!-- <label>Languages Known:</label>
+                    <input type="checkbox" id="english" name="languages" value="english">
+                    <label for="english">English</label>
+                    <input type="checkbox" id="hindi" name="languages" value="hindi">
+                    <label for="hindi">Hindi</label>
+                    <input type="checkbox" id="telugu" name="languages" value="telugu">
+                    <label for="telugu">Telugu</label> -->
+                    <label>Languages Known:</label>
+                    <input type="checkbox" id="english" name="languages[]" value="english">
+                    <label for="english">English</label>
+                    <input type="checkbox" id="telugu" name="languages[]" value="telugu">
+                    <label for="telugu">Telugu</label>
+                    <input type="checkbox" id="hindi" name="languages[]" value="hindi">
+                    <label for="hindi">Hindi</label>
+                    <input type="checkbox" id="tamil" name="languages[]" value="tamil">
+                    <label for="tamil">Tamil</label><br><br>
+                   
+        
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+        
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        
+
+        </font>
+
+
+    </body>
+
+</html>
