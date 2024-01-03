@@ -1,39 +1,67 @@
 <html>
-	<head>
-		<title> Cart page</title>
-	</head>
-	<style>
-		.data{padding-right: 150px;
-			padding-bottom: 150px;
+<head>
+    <title>Cart page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-		}
-	</style>
-	<body>
-	<table>
-		<tr>
-			<th class="data">Book name</th>
-			<th class="data">Price</th>
-		    <th class="data">Quantity</th>
-		    <th class="data">Amount</th>
-		</tr>
-		<tr>
-			<td class="data">Java 2</td>
-			<td class="data">$35.5</td>
-		    <td class="data">2</td>
-		    <td class="data">$70</td>
-		</tr>
-		<tr>
-			<td class="data">XLM bible</td>
-			<td class="data">$40.5</td>
-		    <td class="data">1</td>
-		    <td class="data">$40.5</td>
-		</tr>
-		<tr>
-			<td class="data">Total Amount</td>
-			<td class="data">-$130.5</td>
-		</tr>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 50px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
 
-	</table>
-	</body>
+        th {
+            background-color: #a988f1;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .total-row {
+            font-weight: bold;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Book name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Java 2</td>
+            <td>$35.5</td>
+            <td>2</td>
+            <td>$70</td>
+        </tr>
+        <tr>
+            <td>XLM bible</td>
+            <td>$40.5</td>
+            <td>1</td>
+            <td>$40.5</td>
+        </tr>
+        <tr class="total-row">
+            <td>Total Amount</td>
+            <td colspan="3">-$130.5</td>
+        </tr>
+    </table>
+</body>
 </html>
