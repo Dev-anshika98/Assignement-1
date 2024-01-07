@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Registration page</title>
     <style>
-      
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
@@ -81,7 +80,9 @@
 
         <font face="TIMES NEW ROMAN" size="5">
             <div class="container">
-                <h1 style="text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Registration Form</h1>
+                <h1
+                    style="text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">
+                    Registration Form</h1>
                 <form action="#" method="post">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" oninput="validateName()" required>
@@ -167,7 +168,7 @@
         function validatePhoneNumber() {
             var phoneInput = document.getElementById("phone");
             var phoneError = document.getElementById("phoneError");
-            var phoneNumber = phoneInput.value.replace(/\D/g, ''); 
+            var phoneNumber = phoneInput.value.replace(/\D/g, '');
 
             if (phoneNumber.length !== 10) {
                 phoneError.textContent = "Phone number should contain exactly 10 digits.";
@@ -204,11 +205,11 @@
             }
         }
 
-       
+
         function populateYears() {
             var yearDropdown = document.getElementsByName("dob_year")[0];
             var currentYear = new Date().getFullYear();
-            var startYear = currentYear - 100; 
+            var startYear = currentYear - 100;
 
             for (var year = currentYear; year >= startYear; year--) {
                 var option = document.createElement("option");
